@@ -1,0 +1,25 @@
+{
+    "name": "pxt-MakerDrive",
+    "version": "1.2.1",
+    "description": "MakerDrive MakeCode Package for Cytron MakerDrive",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "microphone": "*"
+    },
+    "files": [
+        "README.md",
+        "main.blocks",
+        "main.ts",
+        "power.ts",
+        "motor.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
