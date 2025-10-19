@@ -16,6 +16,14 @@ enum MotorDirection {
     Backward = 1
 };
 
+//Turns.
+enum turns{
+    //% block "Right"
+    Right = 0,
+
+    //% block"Left"
+    Left = 1
+
 namespace MakerDrive {
 
     /**
@@ -101,5 +109,33 @@ namespace MakerDrive {
                 }
                 break;
         }
+
+        /**
+     * Run the motor forward or backward (Speed = 0-255).
+     * @param motor Motor channel.
+     * @param direction Motor direction.
+     * @param speed Motor speed (0-255). eg: 128
+     */
+    //% group="DC Motors"
+    //% weight=19
+    //% blockGap=40
+    //% blockId=MakerDrive_Turns
+    //% block="Turn %turn at speed %speed"
+    //% speed.min=0 speed.max=255
+    export function runMotor(motor: MotorChannel, direction: MotorDirection, speed: number): void {
+        speed = MakerDrive.limit(speed, 0, 255);
+        switch(motor){
+            case Turns.Right:
+                if (Turn == Turns.Right){
+                    MakerDrive.i2cWrite(REG_ADD_M1A, speed);
+                    MakerDrive.i2cWrite(REG_ADD_M1B, 0);
+                    MakerDrive.I2cWrite(REG_ADD_M2A, 0);
+                    MakerDrive.i2cWrite(REG_ADD_M2B, speed);
+                }
+                else {
+                    MakerDrive.i2cWrite(REG_ADD_M1A, 0);
+                    MakerDrive.i2cWrite(REG_ADD_M1B, speed);
+                    MakerDrive.I2cWrite(REG_ADD_M2A, speed);
+                    MakerDrive.i2cWrite(REG_ADD_M2B, 0);
     }
 }
