@@ -129,13 +129,13 @@ namespace MakerDrive {
                 if (Turn == Turns.Right){
                     MakerDrive.i2cWrite(REG_ADD_M1A, speed);
                     MakerDrive.i2cWrite(REG_ADD_M1B, 0);
-                    MakerDrive.I2cWrite(REG_ADD_M2A, 0);
+                    MakerDrive.i2cWrite(REG_ADD_M2A, 0);
                     MakerDrive.i2cWrite(REG_ADD_M2B, speed);
                 }
                 else {
                     MakerDrive.i2cWrite(REG_ADD_M1A, 0);
                     MakerDrive.i2cWrite(REG_ADD_M1B, speed);
-                    MakerDrive.I2cWrite(REG_ADD_M2A, speed);
+                    MakerDrive.i2cWrite(REG_ADD_M2A, speed);
                     MakerDrive.i2cWrite(REG_ADD_M2B, 0);
     }
 }
